@@ -74,8 +74,7 @@ void mainMenu()
                 LCD.DrawRectangle(5, 200, 60, 30);
                 LCD.WriteAt("Back", 15, 210);
 
-                // If statement that checks if the back button is pressed
-                 while (!LCD.Touch(&x, &y)); 
+               
     //stops code until there is a touch
     while (!LCD.Touch(&x, &y));
     //initiates the touch
