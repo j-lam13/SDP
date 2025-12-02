@@ -7,7 +7,7 @@
 void mainMenu()
 {
     int x, y;
-
+//test
     // Color the whole background of the main menu as dark blue
     LCD.SetFontColor(BLUE);
     LCD.DrawRectangle(0, 0, 319, 239);
@@ -95,4 +95,5 @@ int main()
     {
         LCD.Update();
     }
+    
 }
