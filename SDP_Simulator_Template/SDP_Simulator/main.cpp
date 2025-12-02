@@ -7,7 +7,7 @@
 void mainMenu()
 {
     int x, y;
-//test
+
     // Color the whole background of the main menu as dark blue
     LCD.SetFontColor(BLUE);
     LCD.DrawRectangle(0, 0, 319, 239);
@@ -38,9 +38,10 @@ void mainMenu()
     LCD.SetFontColor(WHITE);
     LCD.DrawRectangle(40, 200, 240, 35);
     LCD.WriteAt("Credits", 115, 205);
-
-    if (LCD.Touch(&x, &y))
-    {
+    while (!LCD.Touch(&x, &y)); 
+    
+    while (LCD.Touch(&x, &y));     
+    
         if (x > 40 && x < 280)
         {
             if (y > 65 && y < 100)
@@ -84,7 +85,7 @@ void mainMenu()
             }
         }
     }
-}
+
 
 int main()
 {
