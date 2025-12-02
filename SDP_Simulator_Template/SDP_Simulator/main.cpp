@@ -38,8 +38,9 @@ void mainMenu()
     LCD.SetFontColor(WHITE);
     LCD.DrawRectangle(40, 200, 240, 35);
     LCD.WriteAt("Credits", 115, 205);
+    //stops code until there is a touch
     while (!LCD.Touch(&x, &y)); 
-    
+    //initiates the touch
     while (LCD.Touch(&x, &y));     
     
         if (x > 40 && x < 280)
@@ -74,7 +75,11 @@ void mainMenu()
                 LCD.WriteAt("Back", 15, 210);
 
                 // If statement that checks if the back button is pressed
-                int x, y;
+                 while (!LCD.Touch(&x, &y)); 
+    //stops code until there is a touch
+    while (!LCD.Touch(&x, &y));
+    //initiates the touch
+    while(LCD.Touch(&x, &y));
                 if (LCD.Touch(&x, &y))
                 {
                     if (x > 5 && x < 65 && y > 200 && y < 230)
