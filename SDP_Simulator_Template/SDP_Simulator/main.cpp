@@ -38,24 +38,63 @@ void mainMenu()
     LCD.SetFontColor(WHITE);
     LCD.DrawRectangle(40, 200, 240, 35);
     LCD.WriteAt("Credits", 115, 205);
-    //stops code until there is a touch
+//stops code until there is a touch
     while (!LCD.Touch(&x, &y)); 
-    //initiates the touch
-    while (LCD.Touch(&x, &y));     
-    
+    //initiates code after touch
+while (LCD.Touch(&x, &y));
         if (x > 40 && x < 280)
         {
             if (y > 65 && y < 100)
             {
                 // play game button pressed
+                LCD.SetFontColor(BLUE);
+                LCD.DrawRectangle(0, 0, 319, 239);
+                LCD.FillRectangle(0, 0, 319, 239);
+                
             }
             else if (y > 110 && y < 145)
             {
                 // stats button pressed
+                LCD.SetFontColor(BLUE);
+                LCD.DrawRectangle(0, 0, 319, 239);
+                LCD.FillRectangle(0, 0, 319, 239);
+                //Write stats text in white
+
+
+                
+                //back button to return to main menu
+                LCD.SetFontColor(WHITE);
+                LCD.DrawRectangle(5, 200, 60, 30);
+                LCD.WriteAt("Back", 10, 205);
+                // While loop to go back to main menu
+                 while(!LCD.Touch(&x, &y));
+                while(LCD.Touch(&x, &y));
+                
+                    if (x > 5 && x < 65 && y > 200 && y < 230)
+                    {
+                        mainMenu();
+                    }
             }
             else if (y > 155 && y < 190)
             {
                 // instructions button pressed
+                LCD.SetFontColor(BLUE);
+                LCD.DrawRectangle(0, 0, 319, 239);
+                LCD.FillRectangle(0, 0, 319, 239);
+
+            
+                //back button to return to main menu
+                LCD.SetFontColor(WHITE);
+                LCD.DrawRectangle(5, 200, 60, 30);
+                LCD.WriteAt("Back", 10, 205);
+                // While loop to go back to main menu
+                 while(!LCD.Touch(&x, &y));
+                while(LCD.Touch(&x, &y));
+                
+                    if (x > 5 && x < 65 && y > 200 && y < 230)
+                    {
+                        mainMenu();
+                    }
             }
             else if (y > 200 && y < 235)
             {
@@ -66,26 +105,26 @@ void mainMenu()
 
                 // Write credits text in white
                 LCD.SetFontColor(WHITE);
-                LCD.WriteAt("Credits:", 5, 5);
-                LCD.WriteAt("Developed by: Matthew Bloom and Joshua Lam", 5, 35);
+                LCD.WriteAt("Credits:", 100, 5);
+                LCD.WriteAt("Developers:", 100, 60); 
+                LCD.WriteAt("Matthew Bloom", 100, 90);
+                LCD.WriteAt("Joshua Lam", 100, 120);
 
                 // Create a back button that when pressed, calls the mainMenu function
                 LCD.SetFontColor(WHITE);
                 LCD.DrawRectangle(5, 200, 60, 30);
-                LCD.WriteAt("Back", 15, 210);
+                LCD.WriteAt("Back", 10, 205);
 
-               
-    //stops code until there is a touch
-    while (!LCD.Touch(&x, &y));
-    //initiates the touch
-    while(LCD.Touch(&x, &y));
-                if (LCD.Touch(&x, &y))
-                {
+                // While loop to go back to main menu
+            
+                while(!LCD.Touch(&x, &y));
+                while(LCD.Touch(&x, &y));
+                
                     if (x > 5 && x < 65 && y > 200 && y < 230)
                     {
                         mainMenu();
                     }
-                }
+                
             }
         }
     }
@@ -100,5 +139,4 @@ int main()
     {
         LCD.Update();
     }
-    
 }
