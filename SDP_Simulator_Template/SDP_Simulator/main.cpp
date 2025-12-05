@@ -9,6 +9,11 @@ int p1Score = 0;
 int p2Score = 0;
 bool questionAnswered[5][6] = {false};
 int QuestionsLeft = 30;
+int p1Wins = 0;
+int p2Wins = 0;
+int ties = 0;
+int HighScore = 0;
+bool gameStarted = false;
 
 // creates a class for each category of questions
 void DrawQuestionBoard();
@@ -104,7 +109,8 @@ void Math::MathQuestion200()
     Value = 200;
     questionAnswered[0][0] = true; 
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
 
     // creates a timer bar at the top of the screen
     int x = 319;
@@ -164,8 +170,8 @@ void Math::MathQuestion200()
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 1
             LCD.WriteAt("A) 144", 30, 125);  // Answer 1
             LCD.WriteAt("B) 24", 210, 125);  // Answer 2
-            LCD.WriteAt("C) 169", 70, 185); // Answer 3
-            LCD.WriteAt("D) 140", 30, 185); // Answer 4
+            LCD.WriteAt("C) 169", 30, 185); // Answer 3
+            LCD.WriteAt("D) 140", 210, 185); // Answer 4
 
 
             LCD.Update();
@@ -180,7 +186,7 @@ void Math::MathQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -248,8 +254,8 @@ void Math::MathQuestion200()
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 1
             LCD.WriteAt("A) 144", 30, 125);  // Answer 1
             LCD.WriteAt("B) 24", 210, 125);  // Answer 2
-            LCD.WriteAt("C) 169", 70, 185); // Answer 3
-            LCD.WriteAt("D) 140", 30, 185); // Answer 4
+            LCD.WriteAt("C) 169", 30, 185); // Answer 3
+            LCD.WriteAt("D) 140", 210, 185); // Answer 4
 
 
             LCD.Update();
@@ -334,7 +340,8 @@ void Math::MathQuestion400()
     questionAnswered[1][0] = true;
     Value = 400;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
 
     while (x >= 0)
     {
@@ -547,7 +554,8 @@ void Math::MathQuestion600()
     questionAnswered[2][0] = true;
     Value = 600;
         QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
        
     while (x >= 0)
     {
@@ -758,7 +766,8 @@ void Math::MathQuestion800()
     questionAnswered[3][0] = true;
     Value = 800;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
 
       
     while (x >= 0)
@@ -893,7 +902,7 @@ void Math::MathQuestion800()
 
             LCD.Update();
 
-            if (Keyboard.isPressed({KEY_D}))
+            if (Keyboard.isPressed({KEY_B}))
             {
                 playerAnswer = 1;
                 LCD.Clear();
@@ -906,7 +915,7 @@ void Math::MathQuestion800()
                 LCD.Update();
                 break;
             }
-            else if (Keyboard.isPressed({KEY_B}))
+            else if (Keyboard.isPressed({KEY_C}))
             {
                 playerAnswer = 2;
                 LCD.Clear();
@@ -934,7 +943,7 @@ void Math::MathQuestion800()
                 LCD.Update();
                 break;
             }
-            else if (Keyboard.isPressed({KEY_C}))
+            else if (Keyboard.isPressed({KEY_D}))
             {
                 playerAnswer = 4;
                 LCD.Clear();
@@ -970,7 +979,9 @@ void Math::MathQuestion1000()
     questionAnswered[4][0] = true;
     Value = 1000;
     QuestionsLeft--;
-    
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
+
  while (x >= 0)
     {
 
@@ -1018,11 +1029,11 @@ void Math::MathQuestion1000()
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
 
-            LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 3
-            LCD.WriteAt("A) 1-x+x^2/2!-x^3/3!...", 70, 150);  // Answer 1
-            LCD.WriteAt("B) 1+x+x^2+x^3...", 210, 150);  // Answer 2
-            LCD.WriteAt("C) 1+x+x^2/2!+x^3/3!...", 70, 200); // Answer 3
-            LCD.WriteAt("D) 1+x+x^2/2+x^3/3...", 210, 200); // Answer 4
+             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 3
+            LCD.WriteAt("A) 1-x+x^2/2!-x^3/3!...", 30, 150);  // Answer 1
+            LCD.WriteAt("B) 1+x+x^2+x^3...", 170, 150);  // Answer 2
+            LCD.WriteAt("C) 1+x+x^2/2!+x^3/3!...", 30, 200); // Answer 3
+            LCD.WriteAt("D) 1+x+x^2/2+x^3/3...", 170, 200); // Answer 4
 
             LCD.Update();
 
@@ -1099,14 +1110,14 @@ void Math::MathQuestion1000()
 
 
              LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 3
-            LCD.WriteAt("A) 1-x+x^2/2!-x^3/3!...", 70, 150);  // Answer 1
-            LCD.WriteAt("B) 1+x+x^2+x^3...", 210, 150);  // Answer 2
-            LCD.WriteAt("C) 1+x+x^2/2!+x^3/3!...", 70, 200); // Answer 3
-            LCD.WriteAt("D) 1+x+x^2/2+x^3/3...", 210, 200); // Answer 4
+            LCD.WriteAt("A) 1-x+x^2/2!-x^3/3!...", 30, 150);  // Answer 1
+            LCD.WriteAt("B) 1+x+x^2+x^3...", 170, 150);  // Answer 2
+            LCD.WriteAt("C) 1+x+x^2/2!+x^3/3!...", 30, 200); // Answer 3
+            LCD.WriteAt("D) 1+x+x^2/2+x^3/3...", 170, 200); // Answer 4
 
             LCD.Update();
 
-            if (Keyboard.isPressed({KEY_A})) //Correct Answer --> Displays correct and adds value to score
+            if (Keyboard.isPressed({KEY_C})) //Correct Answer --> Displays correct and adds value to score
             {
                 playerAnswer = 1;
                 LCD.Clear();
@@ -1133,7 +1144,7 @@ void Math::MathQuestion1000()
                 LCD.Update();
                 break;
             }
-            else if (Keyboard.isPressed({KEY_C})) //Incorrect Answer --> Displays incorrect and subtracts value from score
+            else if (Keyboard.isPressed({KEY_A})) //Incorrect Answer --> Displays incorrect and subtracts value from score
             {
                 playerAnswer = 3;
                 LCD.Clear();
@@ -1169,7 +1180,7 @@ void Math::MathQuestion1000()
         LCD.SetFontColor(WHITE);
         LCD.WriteAt("Time's Up!", 80, 100);
         //Gives the answer
-        LCD.WriteAt("The correct answer was 1+x+x^2/2!+x^3/3!...", 60, 130);
+        LCD.WriteAt("The correct answer was 1+x+x^2/2!+x^3/3!...", 30, 130);
         LCD.Update();
         Sleep(2000);
         DrawQuestionBoard();
@@ -1185,7 +1196,8 @@ void Physics::PhysicsQuestion200()
     questionAnswered[0][1] = true;
     Value = 200;
     QuestionsLeft--;
-    
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -1397,7 +1409,8 @@ void Physics::PhysicsQuestion400()
     questionAnswered[1][1] = true;
     Value = 400;
     QuestionsLeft--;
-    
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;    
      while (x >= 0)
     {
 
@@ -1444,10 +1457,10 @@ void Physics::PhysicsQuestion400()
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 3
-            LCD.WriteAt("A) Newton's 1st law", 70, 145);  // Answer 1
-            LCD.WriteAt("B) Newton's 3rd law", 210, 145);  // Answer 2
+            LCD.WriteAt("A) Bragg's Law", 70, 145);  // Answer 1
+            LCD.WriteAt("B) Newton's 3rd law", 200, 145);  // Answer 2
             LCD.WriteAt("C) Newton's 2nd law", 70, 205); // Answer 3
-            LCD.WriteAt("D) 1st law of thermodynamics", 210, 205); // Answer 4
+            LCD.WriteAt("D) Hooke's Law", 200, 205); // Answer 4
 
             LCD.Update();
 
@@ -1523,10 +1536,10 @@ void Physics::PhysicsQuestion400()
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 3
-            LCD.WriteAt("A) Newton's 1st law", 70, 145);  // Answer 1
-            LCD.WriteAt("B) Newton's 3rd law", 210, 145);  // Answer 2
+            LCD.WriteAt("A) Bragg's Law", 70, 145);  // Answer 1
+            LCD.WriteAt("B) Newton's 3rd law", 200, 145);  // Answer 2
             LCD.WriteAt("C) Newton's 2nd law", 70, 205); // Answer 3
-            LCD.WriteAt("D) 1st law of thermodynamics", 210, 205); // Answer 4
+            LCD.WriteAt("D) Hooke's Law", 200, 205); // Answer 4
 
             LCD.Update();
 
@@ -1609,7 +1622,8 @@ void Physics::PhysicsQuestion600()
     questionAnswered[2][1] = true;
     Value = 600;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
        while (x >= 0)
     {
 
@@ -1798,7 +1812,8 @@ void Physics::PhysicsQuestion800()
     questionAnswered[3][1] = true;
     Value = 800;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -1987,7 +2002,8 @@ void Physics::PhysicsQuestion1000()
     questionAnswered[4][1] = true;
     Value = 1000;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -2002,7 +2018,7 @@ void Physics::PhysicsQuestion1000()
 
 
         LCD.SetFontColor(WHITE);
-        LCD.WriteAt(" Who'se considered the father", 40, 100);
+        LCD.WriteAt(" Who's considered the father", 40, 100);
         LCD.WriteAt(" of thermodynamics?", 40, 120);
 
 
@@ -2176,7 +2192,8 @@ void Chemistry::ChemistryQuestion200()
     questionAnswered[0][2] = true;
     Value = 200;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
      while (x >= 0)
     {
 
@@ -2401,7 +2418,8 @@ void Chemistry::ChemistryQuestion400()
     questionAnswered[1][2] = true;
     Value = 400;
     QuestionsLeft--;
-    
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;    
      while (x >= 0)
     {
 
@@ -2629,7 +2647,8 @@ void Chemistry::ChemistryQuestion600()
     questionAnswered[2][2] = true;
     Value = 600;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
      while (x >= 0)
     {
 
@@ -2854,7 +2873,8 @@ void Chemistry::ChemistryQuestion800()
     questionAnswered[3][2] = true;
     Value = 800;
     QuestionsLeft--;
-    
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;    
      while (x >= 0)
     {
 
@@ -3082,7 +3102,8 @@ void Chemistry::ChemistryQuestion1000()
     questionAnswered[4][2] = true;
     Value = 1000;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
      while (x >= 0)
     {
 
@@ -3314,7 +3335,8 @@ void History::HistoryQuestion200()
     questionAnswered[0][4] = true;
     Value = 200;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
      while (x >= 0)
     {
 
@@ -3544,7 +3566,8 @@ void History::HistoryQuestion400()
     questionAnswered[1][4] = true;
     Value = 400;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
        while (x >= 0)
     {
 
@@ -3721,7 +3744,8 @@ void History::HistoryQuestion600()
     questionAnswered[2][4] = true;
     Value = 600;
     QuestionsLeft--;
-    
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;    
     while (x >= 0)
     {
 
@@ -3898,7 +3922,8 @@ void History::HistoryQuestion800()
     questionAnswered[3][4] = true;
     Value = 800;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -4082,7 +4107,8 @@ void History::HistoryQuestion1000()
     questionAnswered[4][4] = true;
     Value = 1000;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -4093,7 +4119,8 @@ void History::HistoryQuestion1000()
 
         LCD.SetFontColor(WHITE);
         LCD.WriteAt(" What global conflict began after", 40, 100);
-        LCD.WriteAt(" The Assassination of Archduke Franz Ferdinand?", 40, 120);
+        LCD.WriteAt(" The Assassination of Archduke", 40, 120);
+        LCD.WriteAt(" Franz Ferdinand", 40, 140);
 
 
         // Timer bar
@@ -4263,7 +4290,8 @@ void English::EnglishQuestion200()
     questionAnswered[0][3] = true;
     Value = 200;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -4450,7 +4478,8 @@ void English::EnglishQuestion400()
     questionAnswered[1][3] = true;
     Value = 400;
     QuestionsLeft--;
-    
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;    
     while (x >= 0)
     {
 
@@ -4635,7 +4664,8 @@ void English::EnglishQuestion600()
     questionAnswered[2][3] = true;
     Value = 600;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -4823,7 +4853,8 @@ void English::EnglishQuestion800()
     questionAnswered[3][3] = true;
     Value = 800;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -5011,7 +5042,8 @@ void English::EnglishQuestion1000()
     questionAnswered[4][3] = true;
     Value = 1000;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -5200,7 +5232,8 @@ void OSU::OSUQuestion200()
     questionAnswered[0][5] = true;
     Value = 200;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -5388,7 +5421,8 @@ void OSU::OSUQuestion400()
     questionAnswered[1][5] = true;
     Value = 400;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -5575,7 +5609,8 @@ void OSU::OSUQuestion600()
     questionAnswered[2][5] = true;
     Value = 600;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
 while (x >= 0)
     {
 
@@ -5763,7 +5798,8 @@ void OSU::OSUQuestion800()
     questionAnswered[3][5] = true;
     Value = 800;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -5950,7 +5986,8 @@ void OSU::OSUQuestion1000()
     questionAnswered[4][5] = true;
     Value = 1000;
     QuestionsLeft--;
-
+    //prevents issue of keeping previous buzzer winner 
+    buzzerWinner = 0;
     while (x >= 0)
     {
 
@@ -6956,19 +6993,68 @@ if(questionAnswered[2][3] == false){ //Checks if question has been answered --> 
             buttonPressed = true;
         }
     }
-    if(QuestionsLeft == 0){ //If all the questions have been answered, call a function that diplays the results
-        //CALL FUNCTION THAT TAKES YOU TO THE END SCREEN
+    if(QuestionsLeft == 0){ //If all the questions have been answered, display the results
+        
+    LCD.Clear();
+    LCD.SetFontColor(WHITE);
+    LCD.SetFontScale(1.0);
+    LCD.WriteAt("Game Over!", 120, 50);
+    LCD.WriteAt("Player 1 Score: $" + std::to_string(p1Score), 80, 100);
+    LCD.WriteAt("Player 2 Score: $" + std::to_string(p2Score), 80, 140);
+//compares scores and displays winner or tie
+    if (p1Score > p2Score)
+    {
+        LCD.WriteAt("Player 1 Wins!", 120, 180);
+        p1Wins++;
+    if (p1Score > HighScore){
+        p1Score = HighScore; //Tracks high score
     }
+}
+    else if (p2Score > p1Score)
+    {
+        LCD.WriteAt("Player 2 Wins!", 120, 180);
+        p2Wins++;
+        if (p2Score > HighScore){
+        p2Score = HighScore; //Tracks high score    
+    }
+}
+    else
+    {
+        LCD.WriteAt("It's a Tie!", 130, 180);
+        ties++;
+        if (p1Score > HighScore){
+        p1Score = HighScore; //Tracks high score
+        }
+    }
+
+    //Resets scores for next game
+p1Score=0; 
+p2Score=0;
+
+    LCD.Update();
+    LCD.WriteAt("Press ESC to exit to main menu", 80, 200);
+    LCD.WriteAt("Press SPACE to play again", 80, 230);
+    //runs a loop to allow user to exit to main menu or restart game
+    bool buttonPressed = false;
+    while (!buttonPressed)
+    {
+    if (Keyboard.isPressed({KEY_ESCAPE}))
+    {
+        return; //This will bring the user back to the main menu
+        buttonPressed = true;
+    }
+    else if (Keyboard.isPressed({KEY_SPACE}))
+    {
+        DrawQuestionBoard(); // This will allow the calling function to restart the game
+        buttonPressed = true;
+    }
+    }
+}
 }
 
 void mainMenu()
 {
     int x, y;
-    // Initialize stats variables
-    int highScore = 0.0;
-    int player1Wins = 0;
-    int player2Wins = 0;
-
     // Color the whole background of the main menu as dark blue
     LCD.SetFontColor(BLUE);
     LCD.DrawRectangle(0, 0, 319, 239);
@@ -7015,8 +7101,10 @@ void mainMenu()
             if (y > 65 && y < 100)
             {
                 // play game button pressed
+        
                 DrawQuestionBoard();
                 buttonPressed = true;
+                gameStarted = true;
             }
             else if (y > 110 && y < 145)
             {
@@ -7029,11 +7117,11 @@ void mainMenu()
                 LCD.SetFontColor(WHITE);
                 LCD.WriteAt("Statistics:", 100, 5);
                 LCD.WriteAt("High Score: ", 100, 60);
-                LCD.WriteAt(highScore, 100, 90);
+                LCD.WriteAt(HighScore, 100, 90);
                 LCD.WriteAt("Player 1 Wins: ", 100, 120);
-                LCD.WriteAt(player1Wins, 100, 150);
+                LCD.WriteAt(p1Wins, 100, 150);
                 LCD.WriteAt("Player 2 Wins: ", 100, 180);
-                LCD.WriteAt(player2Wins, 100, 210);
+                LCD.WriteAt(p2Wins, 100, 210);
 
                 // back button to return to main menu
                 LCD.SetFontColor(WHITE);
@@ -7059,15 +7147,20 @@ void mainMenu()
                 buttonPressed = true;
                 // display instructions
                 LCD.SetFontColor(WHITE);
-                LCD.SetFontScale(0.5);
-                LCD.WriteAt("Instructions:", 100, 20);
-                LCD.WriteAt("1. This is a one or two-player game.", 10, 35);
-                LCD.WriteAt("2. Players take turns selecting questions.", 10, 60);
-                LCD.WriteAt("3. The first player to hit their buzzer answers.", 10, 85);
-                LCD.WriteAt("4. Answer questions to earn points, ", 10, 110);
-                LCD.WriteAt(" incorrect answers lose points.", 30, 135);
-                LCD.WriteAt("5. The red bar at the top is the time limit.", 10, 160);
-                LCD.WriteAt("6. The player with the most points at the end wins!", 10, 185);
+                LCD.SetFontScale(.5);
+                LCD.WriteAt("Instructions:", 100, 10);
+                LCD.WriteAt("1. This is a two-player game.", 10, 25);
+                LCD.WriteAt("2. Players take turns selecting questions,", 10, 40);
+                LCD.WriteAt("   the player that selects first is random.", 10, 55);
+                LCD.WriteAt("3. The first player to hit their buzzer answers.", 10, 70);
+                LCD.WriteAt("4. Answer correctly to earn points, ", 10, 85);
+                LCD.WriteAt("   incorrect answers lose points.", 10, 100);
+                LCD.WriteAt("5. Only the first person to buzz can answer.", 10, 115);
+                LCD.WriteAt("6. The question disappears after someone buzzes.", 10, 130);
+                LCD.WriteAt("7. Multiple answer choices appear after a buzz in.", 10, 145);
+                LCD.WriteAt("8. There is a time limit for each question", 10, 160);
+                LCD.WriteAt("   and answer, represented with a red bar.", 10, 175);
+                LCD.WriteAt("9. The player with the most points at the end wins!", 10, 190);
 
                 // back button to return to main menu
                 LCD.SetFontColor(WHITE);
@@ -7097,9 +7190,11 @@ void mainMenu()
                 // Write credits text in white
                 LCD.SetFontColor(WHITE);
                 LCD.WriteAt("Credits:", 100, 5);
-                LCD.WriteAt("Developers:", 100, 60);
-                LCD.WriteAt("Matthew Bloom", 100, 90);
-                LCD.WriteAt("Joshua Lam", 100, 120);
+                LCD.WriteAt("Developers:", 80, 50);
+                LCD.WriteAt("Matthew Bloom", 80, 80);
+                LCD.WriteAt("Joshua Lam", 80, 110);
+                LCD.WriteAt("Inspired by", 80, 140);
+                LCD.WriteAt("Jeopardy!", 90, 170);
 
                 // Create a back button that when pressed, calls the mainMenu function
                 LCD.SetFontColor(WHITE);
@@ -7127,9 +7222,14 @@ int main()
 
     while (1)
     {
-        
+       
         // allows return to work instead of using mainMenu() repeatedly
+        while (!gameStarted){
         mainMenu();
+    }
+         if (QuestionsLeft !=0){
+            DrawQuestionBoard();
+        }
         LCD.Update();
     }
 }
