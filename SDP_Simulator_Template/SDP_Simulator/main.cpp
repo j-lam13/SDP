@@ -160,8 +160,37 @@ void Math::MathQuestion200()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+        while (x>=0)
         {
+            LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 144", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
            
@@ -185,6 +214,9 @@ void Math::MathQuestion200()
                 LCD.WriteAt("Correct!", 130, 100);
                 LCD.WriteAt("+$200", 130, 130);
                 p1Score += Value;
+                //Create a red circle on the screen to indicate correct answer
+                
+
                 Sleep(2000);
                 return;
                 LCD.Update();
@@ -200,7 +232,7 @@ void Math::MathQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -214,7 +246,7 @@ void Math::MathQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -228,7 +260,7 @@ void Math::MathQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -244,8 +276,37 @@ void Math::MathQuestion200()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+        while (x>=0)
         {
+            LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 144", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
            
@@ -270,7 +331,7 @@ void Math::MathQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -284,7 +345,7 @@ void Math::MathQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -298,7 +359,7 @@ void Math::MathQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -312,7 +373,7 @@ void Math::MathQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -327,7 +388,7 @@ void Math::MathQuestion200()
         LCD.WriteAt("The correct answer was 144", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -383,8 +444,40 @@ void Math::MathQuestion400()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+
+       x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 1/16", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -406,7 +499,7 @@ void Math::MathQuestion400()
                 LCD.WriteAt("+$400", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -420,7 +513,7 @@ void Math::MathQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -434,7 +527,7 @@ void Math::MathQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -448,7 +541,7 @@ void Math::MathQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -462,8 +555,39 @@ void Math::MathQuestion400()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 1/16", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
            
@@ -486,7 +610,7 @@ void Math::MathQuestion400()
                 LCD.WriteAt("+$400", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -500,7 +624,7 @@ void Math::MathQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -514,7 +638,7 @@ void Math::MathQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -528,7 +652,7 @@ void Math::MathQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -542,7 +666,7 @@ void Math::MathQuestion400()
         LCD.WriteAt("The correct answer was 1/16", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
     
@@ -596,8 +720,39 @@ void Math::MathQuestion600()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+       x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 720", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -619,7 +774,7 @@ void Math::MathQuestion600()
                 LCD.WriteAt("+$600", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -633,7 +788,7 @@ void Math::MathQuestion600()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -647,7 +802,7 @@ void Math::MathQuestion600()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -661,7 +816,7 @@ void Math::MathQuestion600()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -675,8 +830,39 @@ void Math::MathQuestion600()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+       x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 720", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
            
@@ -698,7 +884,7 @@ void Math::MathQuestion600()
                 LCD.WriteAt("+$600", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -712,7 +898,7 @@ void Math::MathQuestion600()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -726,7 +912,7 @@ void Math::MathQuestion600()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -740,7 +926,7 @@ void Math::MathQuestion600()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -754,7 +940,7 @@ void Math::MathQuestion600()
         LCD.WriteAt("The correct answer was 720", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
    
@@ -809,8 +995,39 @@ void Math::MathQuestion800()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 10x+9", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             LCD.SetFontColor(BLUE);
@@ -832,7 +1049,7 @@ void Math::MathQuestion800()
                 LCD.WriteAt("+$800", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -846,7 +1063,7 @@ void Math::MathQuestion800()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -860,7 +1077,7 @@ void Math::MathQuestion800()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -874,7 +1091,7 @@ void Math::MathQuestion800()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -888,8 +1105,39 @@ void Math::MathQuestion800()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 10x+9", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -911,7 +1159,7 @@ void Math::MathQuestion800()
                 LCD.WriteAt("+$800", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -925,7 +1173,7 @@ void Math::MathQuestion800()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -939,7 +1187,7 @@ void Math::MathQuestion800()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -953,7 +1201,7 @@ void Math::MathQuestion800()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -966,7 +1214,7 @@ void Math::MathQuestion800()
         LCD.WriteAt("The correct answer was 10x^2+9", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
    
@@ -1023,8 +1271,39 @@ void Math::MathQuestion1000()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 1+x+x^2/2!+x^3/3!...", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -1046,7 +1325,7 @@ void Math::MathQuestion1000()
                 LCD.WriteAt("+$1000", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1060,7 +1339,7 @@ void Math::MathQuestion1000()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1074,7 +1353,7 @@ void Math::MathQuestion1000()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1088,7 +1367,7 @@ void Math::MathQuestion1000()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1103,8 +1382,39 @@ void Math::MathQuestion1000()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 1+x+x^2/2!+x^3/3!+...", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -1126,7 +1436,7 @@ void Math::MathQuestion1000()
                 LCD.WriteAt("+$1000", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1140,7 +1450,7 @@ void Math::MathQuestion1000()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1154,7 +1464,7 @@ void Math::MathQuestion1000()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1168,7 +1478,7 @@ void Math::MathQuestion1000()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1183,7 +1493,7 @@ void Math::MathQuestion1000()
         LCD.WriteAt("The correct answer was 1+x+x^2/2!+x^3/3!...", 30, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -1239,8 +1549,39 @@ void Physics::PhysicsQuestion200()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Gravity", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             
 
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS 1
@@ -1260,7 +1601,7 @@ void Physics::PhysicsQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1274,7 +1615,7 @@ void Physics::PhysicsQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1288,7 +1629,7 @@ void Physics::PhysicsQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1302,7 +1643,7 @@ void Physics::PhysicsQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1317,8 +1658,39 @@ void Physics::PhysicsQuestion200()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Gravity", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -1339,7 +1711,7 @@ void Physics::PhysicsQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1353,7 +1725,7 @@ void Physics::PhysicsQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1367,7 +1739,7 @@ void Physics::PhysicsQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1381,7 +1753,7 @@ void Physics::PhysicsQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1396,7 +1768,7 @@ void Physics::PhysicsQuestion200()
         LCD.WriteAt("The correct answer was Gravity", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -1451,8 +1823,39 @@ void Physics::PhysicsQuestion400()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Newtons 2nd Law", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -1473,7 +1876,7 @@ void Physics::PhysicsQuestion400()
                 LCD.WriteAt("+$400", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1487,7 +1890,7 @@ void Physics::PhysicsQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1501,7 +1904,7 @@ void Physics::PhysicsQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1515,7 +1918,7 @@ void Physics::PhysicsQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1530,8 +1933,39 @@ void Physics::PhysicsQuestion400()
         Sleep(2000);
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Newton's 2nd Law", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -1552,7 +1986,7 @@ void Physics::PhysicsQuestion400()
                 LCD.WriteAt("+$400", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1566,7 +2000,7 @@ void Physics::PhysicsQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1580,7 +2014,7 @@ void Physics::PhysicsQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1594,7 +2028,7 @@ void Physics::PhysicsQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1609,7 +2043,7 @@ void Physics::PhysicsQuestion400()
         LCD.WriteAt("The correct answer was Newton's 2nd law", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -1698,11 +2132,42 @@ void Physics::PhysicsQuestion600()
         LCD.WriteAt("The correct answer was Potential Energy", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Potential Energy", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -1734,7 +2199,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1754,7 +2219,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1774,7 +2239,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1793,7 +2258,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1888,11 +2353,42 @@ void Physics::PhysicsQuestion800()
         LCD.WriteAt("The correct answer was Refraction", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Refraction", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -1924,7 +2420,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1944,7 +2440,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1964,7 +2460,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -1983,7 +2479,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2078,11 +2574,42 @@ void Physics::PhysicsQuestion1000()
         LCD.WriteAt("The correct answer was Sadi Carnot", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Sadi Carnot", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -2114,7 +2641,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2134,7 +2661,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2154,7 +2681,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2173,7 +2700,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2239,8 +2766,39 @@ void Chemistry::ChemistryQuestion200()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Water", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -2264,7 +2822,7 @@ void Chemistry::ChemistryQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2278,7 +2836,7 @@ void Chemistry::ChemistryQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2292,7 +2850,7 @@ void Chemistry::ChemistryQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2306,7 +2864,7 @@ void Chemistry::ChemistryQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2322,8 +2880,39 @@ void Chemistry::ChemistryQuestion200()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Water", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -2348,7 +2937,7 @@ void Chemistry::ChemistryQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2362,7 +2951,7 @@ void Chemistry::ChemistryQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2376,7 +2965,7 @@ void Chemistry::ChemistryQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2390,7 +2979,7 @@ void Chemistry::ChemistryQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2405,7 +2994,7 @@ void Chemistry::ChemistryQuestion200()
         LCD.WriteAt("The correct answer was Water", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -2467,8 +3056,39 @@ void Chemistry::ChemistryQuestion400()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Electron", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -2493,7 +3113,7 @@ void Chemistry::ChemistryQuestion400()
                 LCD.WriteAt("+$400", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2507,7 +3127,7 @@ void Chemistry::ChemistryQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2521,7 +3141,7 @@ void Chemistry::ChemistryQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2535,7 +3155,7 @@ void Chemistry::ChemistryQuestion400()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2551,8 +3171,39 @@ void Chemistry::ChemistryQuestion400()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Electron", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
            
@@ -2577,7 +3228,7 @@ void Chemistry::ChemistryQuestion400()
                 LCD.WriteAt("+$400", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2591,7 +3242,7 @@ void Chemistry::ChemistryQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2605,7 +3256,7 @@ void Chemistry::ChemistryQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2619,7 +3270,7 @@ void Chemistry::ChemistryQuestion400()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2634,7 +3285,7 @@ void Chemistry::ChemistryQuestion400()
         LCD.WriteAt("The correct answer was Electron", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -2694,8 +3345,39 @@ void Chemistry::ChemistryQuestion600()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Ideal Gas Law", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -2720,7 +3402,7 @@ void Chemistry::ChemistryQuestion600()
                 LCD.WriteAt("+$600", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2734,7 +3416,7 @@ void Chemistry::ChemistryQuestion600()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2748,7 +3430,7 @@ void Chemistry::ChemistryQuestion600()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2762,7 +3444,7 @@ void Chemistry::ChemistryQuestion600()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2778,8 +3460,39 @@ void Chemistry::ChemistryQuestion600()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Ideal Gas Law", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -2803,7 +3516,7 @@ void Chemistry::ChemistryQuestion600()
                 LCD.WriteAt("+$600", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2817,7 +3530,7 @@ void Chemistry::ChemistryQuestion600()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2831,7 +3544,7 @@ void Chemistry::ChemistryQuestion600()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2845,7 +3558,7 @@ void Chemistry::ChemistryQuestion600()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2860,7 +3573,7 @@ void Chemistry::ChemistryQuestion600()
         LCD.WriteAt("The correct answer was Ideal Gas Law", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -2922,18 +3635,49 @@ void Chemistry::ChemistryQuestion800()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Electronegativity", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
            
 
 
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS C
-            LCD.WriteAt("A) Ionization Energy", 70, 125);  // Answer 1
-            LCD.WriteAt("B) Atomic Raidus", 210, 125);  // Answer 2
-            LCD.WriteAt("C) Electronegativity", 70, 185); // Answer 3
-            LCD.WriteAt("D) Electron Affinity", 210, 185); // Answer 4
+            LCD.WriteAt("A) Ionization Energy", 20, 125);  // Answer 1
+            LCD.WriteAt("B) Atomic Raidus", 160, 125);  // Answer 2
+            LCD.WriteAt("C) Electronegativity", 20, 185); // Answer 3
+            LCD.WriteAt("D) Electron Affinity", 160, 185); // Answer 4
 
 
             LCD.Update();
@@ -2948,7 +3692,7 @@ void Chemistry::ChemistryQuestion800()
                 LCD.WriteAt("+$800", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2962,7 +3706,7 @@ void Chemistry::ChemistryQuestion800()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2976,7 +3720,7 @@ void Chemistry::ChemistryQuestion800()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -2990,7 +3734,7 @@ void Chemistry::ChemistryQuestion800()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3006,18 +3750,49 @@ void Chemistry::ChemistryQuestion800()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Electronegativity", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 7);
             
 
 
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS C
-            LCD.WriteAt("A) Ionization Energy", 70, 125);  // Answer 1
-            LCD.WriteAt("B) Atomic Raidus", 210, 125);  // Answer 2
-            LCD.WriteAt("C) Electronegativity", 70, 185); // Answer 3
-            LCD.WriteAt("D) Electron Affinity", 210, 185); // Answer 4
+            LCD.WriteAt("A) Ionization Energy", 20, 125);  // Answer 1
+            LCD.WriteAt("B) Atomic Raidus", 160, 125);  // Answer 2
+            LCD.WriteAt("C) Electronegativity", 20, 185); // Answer 3
+            LCD.WriteAt("D) Electron Affinity", 160, 185); // Answer 4
 
 
             LCD.Update();
@@ -3032,7 +3807,7 @@ void Chemistry::ChemistryQuestion800()
                 LCD.WriteAt("+$800", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3046,7 +3821,7 @@ void Chemistry::ChemistryQuestion800()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3060,7 +3835,7 @@ void Chemistry::ChemistryQuestion800()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3074,7 +3849,7 @@ void Chemistry::ChemistryQuestion800()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3089,7 +3864,7 @@ void Chemistry::ChemistryQuestion800()
         LCD.WriteAt("The correct answer was Electronegativity", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -3153,8 +3928,39 @@ void Chemistry::ChemistryQuestion1000()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Ionic Bond", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
            
@@ -3162,7 +3968,7 @@ void Chemistry::ChemistryQuestion1000()
 
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS C
             LCD.WriteAt("A) Covalent Bond", 70, 125);  // Answer 1
-            LCD.WriteAt("B) AMetallic Bond", 210, 125);  // Answer 2
+            LCD.WriteAt("B) Metallic Bond", 210, 125);  // Answer 2
             LCD.WriteAt("C) Ionic Bond", 70, 185); // Answer 3
             LCD.WriteAt("D) Hydrogen Bond", 210, 185); // Answer 4
 
@@ -3179,7 +3985,7 @@ void Chemistry::ChemistryQuestion1000()
                 LCD.WriteAt("+$1000", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3193,7 +3999,7 @@ void Chemistry::ChemistryQuestion1000()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3207,7 +4013,7 @@ void Chemistry::ChemistryQuestion1000()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3221,7 +4027,7 @@ void Chemistry::ChemistryQuestion1000()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3237,8 +4043,39 @@ void Chemistry::ChemistryQuestion1000()
 
 
         LCD.Update();
-        while (1)
+        x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Ionic Bond", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -3263,7 +4100,7 @@ void Chemistry::ChemistryQuestion1000()
                 LCD.WriteAt("+$1000", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3277,7 +4114,7 @@ void Chemistry::ChemistryQuestion1000()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3291,7 +4128,7 @@ void Chemistry::ChemistryQuestion1000()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3305,7 +4142,7 @@ void Chemistry::ChemistryQuestion1000()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3320,7 +4157,7 @@ void Chemistry::ChemistryQuestion1000()
         LCD.WriteAt("The correct answer was Ionic Bond", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -3410,7 +4247,7 @@ void History::HistoryQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p1Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3424,7 +4261,7 @@ void History::HistoryQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3438,7 +4275,7 @@ void History::HistoryQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3452,7 +4289,7 @@ void History::HistoryQuestion200()
                 p1Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3494,7 +4331,7 @@ void History::HistoryQuestion200()
                 LCD.WriteAt("+$200", 130, 130);
                 p2Score += Value;
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3508,7 +4345,7 @@ void History::HistoryQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3522,7 +4359,7 @@ void History::HistoryQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3536,7 +4373,7 @@ void History::HistoryQuestion200()
                 p2Score -= Value;
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3551,7 +4388,7 @@ void History::HistoryQuestion200()
         LCD.WriteAt("The correct answer was Pyramids", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
 
@@ -3634,11 +4471,44 @@ void History::HistoryQuestion400()
         LCD.WriteAt("The correct answer was Christopher Columbus", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Christopher Columbus", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
             
@@ -3669,7 +4539,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3689,7 +4559,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3709,7 +4579,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3728,7 +4598,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3809,11 +4679,44 @@ void History::HistoryQuestion600()
         LCD.WriteAt("The correct answer was Thoamas Jefferson", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Thomas Jefferson", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -3847,7 +4750,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3867,7 +4770,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3887,7 +4790,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3906,7 +4809,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -3998,11 +4901,44 @@ void History::HistoryQuestion800()
         LCD.WriteAt("The correct answer was Qin Dynasty", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Qin Dynasty", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -4029,7 +4965,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4049,7 +4985,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4069,7 +5005,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4088,7 +5024,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4177,11 +5113,44 @@ void History::HistoryQuestion1000()
         LCD.WriteAt("The correct answer was World War I", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was World War I", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -4212,7 +5181,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4232,7 +5201,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4252,7 +5221,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4271,7 +5240,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4366,11 +5335,44 @@ void English::EnglishQuestion200()
         LCD.WriteAt("The correct answer was Verb", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Verb", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -4401,7 +5403,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4421,7 +5423,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4441,7 +5443,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4460,7 +5462,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4552,18 +5554,51 @@ void English::EnglishQuestion400()
         LCD.WriteAt("The correct answer was Theme", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Theme", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
 
 
 
-            LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS D
+            LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS A
             LCD.WriteAt("A) Theme", 30, 125);  // Answer 1
             LCD.WriteAt("B) Setting", 210, 125);  // Answer 2
             LCD.WriteAt("C) Plot", 30, 185); // Answer 3
@@ -4572,7 +5607,7 @@ while (1)
 
             LCD.Update();
 
-            if (Keyboard.isPressed({KEY_D})) //Correct Answer --> Displays correct and adds value to score
+            if (Keyboard.isPressed({KEY_A})) //Correct Answer --> Displays correct and adds value to score
             {
                
                 LCD.Clear();
@@ -4587,7 +5622,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4607,7 +5642,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4627,11 +5662,11 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
-            else if (Keyboard.isPressed({KEY_A})) //Incorrect Answer --> Displays incorrect and subtracts value from score
+            else if (Keyboard.isPressed({KEY_D})) //Incorrect Answer --> Displays incorrect and subtracts value from score
             {
                
                 LCD.Clear();
@@ -4646,7 +5681,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4740,11 +5775,44 @@ void English::EnglishQuestion600()
         LCD.WriteAt("The correct answer was Simile", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Simile", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -4776,7 +5844,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4796,7 +5864,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4816,7 +5884,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4835,7 +5903,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4869,8 +5937,8 @@ void English::EnglishQuestion800()
 
 
         LCD.SetFontColor(WHITE);
-        LCD.WriteAt(" What person is a story told from the 'I' point of ", 40, 100);
-        LCD.WriteAt("view written in?.", 40, 120);
+        LCD.WriteAt(" What point of view uses 'I' and is told from ", 20, 100);
+        LCD.WriteAt("the perspective of a character in the story?.", 20, 120);
 
 
 
@@ -4929,11 +5997,44 @@ void English::EnglishQuestion800()
         LCD.WriteAt("The correct answer was First Person", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was First Person", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -4942,9 +6043,9 @@ while (1)
 
             LCD.SetFontColor(WHITE);         // CORERCT ANSWER IS ____
             LCD.WriteAt("A) First Person", 30, 125);  // Answer 1
-            LCD.WriteAt("B) Third Person Limited", 210, 125);  // Answer 2
+            LCD.WriteAt("B) Third Person Limited", 175, 125);  // Answer 2
             LCD.WriteAt("C) Third Person", 30, 185); // Answer 3
-            LCD.WriteAt("D) Second Person", 210, 185); // Answer 4
+            LCD.WriteAt("D) Second Person", 175, 185); // Answer 4
 
 
             LCD.Update();
@@ -4965,7 +6066,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -4985,7 +6086,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5005,7 +6106,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5024,7 +6125,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5118,11 +6219,44 @@ void English::EnglishQuestion1000()
         LCD.WriteAt("The correct answer was Alliteration", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Alliteration", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -5154,7 +6288,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5174,7 +6308,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5194,7 +6328,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5213,7 +6347,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5308,11 +6442,44 @@ void OSU::OSUQuestion200()
         LCD.WriteAt("The correct answer was Brutus Buckeye", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Brutus Buckeye", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -5344,7 +6511,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5364,7 +6531,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5384,7 +6551,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5403,7 +6570,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5497,11 +6664,44 @@ void OSU::OSUQuestion400()
         LCD.WriteAt("The correct answer was The Horseshoe", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was The Horseshoe", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -5533,7 +6733,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5553,7 +6753,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5573,7 +6773,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5592,7 +6792,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5685,11 +6885,44 @@ while (x >= 0)
         LCD.WriteAt("The correct answer was 27-9", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 27-9", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -5721,7 +6954,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5741,7 +6974,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5761,7 +6994,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5780,7 +7013,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5873,11 +7106,44 @@ void OSU::OSUQuestion800()
         LCD.WriteAt("The correct answer was 1870", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was 1870", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -5909,7 +7175,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5929,7 +7195,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5949,7 +7215,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -5968,7 +7234,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -6062,11 +7328,44 @@ void OSU::OSUQuestion1000()
         LCD.WriteAt("The correct answer was Hayes Hall", 60, 130);
         LCD.Update();
         Sleep(2000);
-        DrawQuestionBoard();
+        return;
         LCD.Update();
     }
-while (1)
+    //sets up answer timer
+    x=319;
+while (x>=0)
         {
+
+        // Timer bar
+        LCD.SetFontColor(RED);
+        LCD.DrawRectangle(0, 0, x, 10);
+        LCD.FillRectangle(0, 0, x, 10);
+
+        x -= 11;
+        Sleep(175);
+        LCD.Update();
+        LCD.SetFontColor(BLACK);
+        LCD.DrawRectangle(0, 0, 319, 10);
+        LCD.FillRectangle(0, 0, 319, 10);
+        if (x<=0)
+        {
+            LCD.Clear();
+            LCD.SetFontColor(WHITE);
+            LCD.WriteAt("Time's Up!", 80, 100);
+            //Gives the answer
+            LCD.WriteAt("The correct answer was Hayes Hall", 60, 130);
+                if (buzzerWinner == 1){
+                p1Score -= Value;
+                }
+                else if (buzzerWinner == 2){
+                p2Score -= Value;
+                }//lose points for not answering in time
+            LCD.Update();
+            Sleep(2000);
+            return;
+            LCD.Update();
+        }
+        
             // Draw four boxes on the screen for answer choices
             LCD.WriteAt("Enter answer A, B, C, or D:", 80, 75);
 
@@ -6098,7 +7397,7 @@ while (1)
                 p2Score += Value;
                 }
                 Sleep(2000);
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -6118,7 +7417,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -6138,7 +7437,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -6157,7 +7456,7 @@ while (1)
                 }
                 Sleep(2000);
                 LCD.Update();
-                DrawQuestionBoard();
+                return;
                 LCD.Update();
                 break;
             }
@@ -6166,6 +7465,103 @@ while (1)
 
 
 
+}
+
+/*This function displays the results at the end of the game and puts the winner in the stats page of the main menu
+It also resets everything and prepares the code for a second game or allows for the user to return to the menu -Joshua Lam*/
+void DisplayResults() 
+{        
+    LCD.Clear();
+    LCD.SetFontColor(WHITE);
+    LCD.SetFontScale(1.0);
+    LCD.WriteAt("Game Over!", 120, 30);
+    LCD.WriteAt("Player 1 Score: $" + std::to_string(p1Score), 40, 70);
+    LCD.WriteAt("Player 2 Score: $" + std::to_string(p2Score), 40, 90);
+
+    //draw trophy based on winner
+    FEHImage trophy1, trophy2; 
+    trophy1.Open("trophy1new.png");
+    trophy2.Open("trophy2new.png");
+    if (p1Score > p2Score){
+        trophy1.Draw(190, 120); //draws player 1 trophy
+    }
+    else if (p2Score > p1Score){
+        trophy2.Draw(190, 120); //draws player 2 trophy
+    }
+
+//compares scores and displays winner or tie
+    if (p1Score > p2Score)
+    {
+        LCD.WriteAt("Player 1 Wins!", 20, 130);
+        p1Wins++;
+    if (p1Score > HighScore){
+        HighScore = p1Score; //Tracks high score
+    }
+}
+    else if (p2Score > p1Score)
+    {
+        LCD.WriteAt("Player 2 Wins!", 20, 130);
+        p2Wins++;
+        if (p2Score > HighScore){
+        HighScore = p2Score; //Tracks high score    
+    }
+}
+    else
+    {
+        LCD.WriteAt("It's a Tie!", 20, 130);
+        ties++;
+        if (p1Score > HighScore){
+        HighScore = p1Score; //Tracks high score
+        }
+    }
+
+    //Resets scores for next game
+p1Score=0; 
+p2Score=0;
+
+    LCD.SetFontScale(0.5);
+    LCD.WriteAt("Press ESC to exit to main menu", 10, 160);
+    LCD.WriteAt("Press SPACE to play again", 10, 190);
+    //runs a loop to allow user to exit to main menu or restart game
+    bool buttonPressed = false;
+    while (!buttonPressed)
+    {
+        LCD.Update(); //This LCD update is necessary as it prevents the program from crashing while waiting for input
+    if (Keyboard.isPressed({KEY_ESCAPE}))
+    {
+        
+        buttonPressed = true;
+        buzzerWinner = 0;
+    p1Score = 0;
+    p2Score = 0;
+//this sets all of the questions to unanswered for the new game by making the boolean false for all of them
+    for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 6; j++){
+        questionAnswered[i][j] = false;
+    }
+}
+   
+    gameStarted = false;
+    return; //This will bring the user back to the main menu
+    }
+    else if (Keyboard.isPressed({KEY_SPACE}))
+    {
+      // This will allow the calling function to restart the game
+    buttonPressed = true;
+    buzzerWinner = 0;
+    p1Score = 0;
+    p2Score = 0;
+    //this sets all of the questions to unanswered for the new game by making the boolean false for all of them
+    for(int i = 0; i < 5; i++){
+    for(int j = 0; j < 6; j++){
+        questionAnswered[i][j] = false;
+    }
+}
+LCD.SetFontScale(1); //Resets font scale to default to prevent scuffed menu
+    return;
+    }
+    Sleep(.1); //This prevents crashing by adding a small delay
+    }
 }
 
 void DrawQuestionBoard()
@@ -6798,6 +8194,23 @@ if(questionAnswered[2][3] == false){ //Checks if question has been answered --> 
     LCD.WriteAt("P2 Score:", 220, 223);
     LCD.WriteAt(p2Score, 280, 223);
 
+    //Write in the middle of the screen "Select a Question"
+    LCD.SetFontColor(YELLOW);
+    LCD.SetFontScale(0.5);
+    LCD.WriteAt("Slecting  Player...", 90, 223);
+    Sleep(1000);
+    LCD.SetFontColor(BLACK);
+    LCD.FillRectangle(90, 223, 145, 16); //Cover up previous text
+    //RANDOMLY SELECT PLAYER TO CHOOSE QUESTION
+    if(Random.RandInt() <= 16383){ //50% chance
+        LCD.SetFontColor(RED);
+        LCD.WriteAt("Player 1's Turn!", 100, 223);
+    }
+    else{
+        LCD.SetFontColor(RED);
+        LCD.WriteAt("Player 2's Turn!", 100, 223);
+    }
+
     int x, y;
     // this bool and loopallows clicks that do not correspond to a button to be ignored (a click on empty space will not softlock the user)
     bool buttonPressed = false;
@@ -6994,61 +8407,7 @@ if(questionAnswered[2][3] == false){ //Checks if question has been answered --> 
         }
     }
     if(QuestionsLeft == 0){ //If all the questions have been answered, display the results
-        
-    LCD.Clear();
-    LCD.SetFontColor(WHITE);
-    LCD.SetFontScale(1.0);
-    LCD.WriteAt("Game Over!", 120, 50);
-    LCD.WriteAt("Player 1 Score: $" + std::to_string(p1Score), 80, 100);
-    LCD.WriteAt("Player 2 Score: $" + std::to_string(p2Score), 80, 140);
-//compares scores and displays winner or tie
-    if (p1Score > p2Score)
-    {
-        LCD.WriteAt("Player 1 Wins!", 120, 180);
-        p1Wins++;
-    if (p1Score > HighScore){
-        p1Score = HighScore; //Tracks high score
-    }
-}
-    else if (p2Score > p1Score)
-    {
-        LCD.WriteAt("Player 2 Wins!", 120, 180);
-        p2Wins++;
-        if (p2Score > HighScore){
-        p2Score = HighScore; //Tracks high score    
-    }
-}
-    else
-    {
-        LCD.WriteAt("It's a Tie!", 130, 180);
-        ties++;
-        if (p1Score > HighScore){
-        p1Score = HighScore; //Tracks high score
-        }
-    }
-
-    //Resets scores for next game
-p1Score=0; 
-p2Score=0;
-
-    LCD.Update();
-    LCD.WriteAt("Press ESC to exit to main menu", 80, 200);
-    LCD.WriteAt("Press SPACE to play again", 80, 230);
-    //runs a loop to allow user to exit to main menu or restart game
-    bool buttonPressed = false;
-    while (!buttonPressed)
-    {
-    if (Keyboard.isPressed({KEY_ESCAPE}))
-    {
-        return; //This will bring the user back to the main menu
-        buttonPressed = true;
-    }
-    else if (Keyboard.isPressed({KEY_SPACE}))
-    {
-        DrawQuestionBoard(); // This will allow the calling function to restart the game
-        buttonPressed = true;
-    }
-    }
+DisplayResults();
 }
 }
 
@@ -7060,7 +8419,19 @@ void mainMenu()
     LCD.DrawRectangle(0, 0, 319, 239);
     LCD.FillRectangle(0, 0, 319, 239);
 
+    //Create circles going down each of the sides for decoration
+    LCD.SetFontColor(WHITE);
+    for (int i = 0; i < 10; i++)
+    {
+        LCD.DrawCircle(20, 10 + (i * 24), 10);
+        LCD.FillCircle(20, 10 + (i * 24), 10);
+        LCD.DrawCircle(300, 10 + (i * 24), 10);
+        LCD.FillCircle(300, 10 + (i * 24), 10);
+    }
+
+
     // Title
+    LCD.SetFontScale(1);
     LCD.SetFontColor(WHITE);
     LCD.DrawRectangle(40, 5, 240, 40);
     LCD.WriteAt("Jeopardy Battle!", 65, 18);
@@ -7116,12 +8487,14 @@ void mainMenu()
                 // Write stats text in white
                 LCD.SetFontColor(WHITE);
                 LCD.WriteAt("Statistics:", 100, 5);
-                LCD.WriteAt("High Score: ", 100, 60);
-                LCD.WriteAt(HighScore, 100, 90);
-                LCD.WriteAt("Player 1 Wins: ", 100, 120);
-                LCD.WriteAt(p1Wins, 100, 150);
-                LCD.WriteAt("Player 2 Wins: ", 100, 180);
-                LCD.WriteAt(p2Wins, 100, 210);
+                LCD.WriteAt("High Score: ", 100, 30);
+                LCD.WriteAt(HighScore, 100, 50);
+                LCD.WriteAt("Player 1 Wins: ", 100, 80);
+                LCD.WriteAt(p1Wins, 100, 100);
+                LCD.WriteAt("Player 2 Wins: ", 100, 130);
+                LCD.WriteAt(p2Wins, 100, 150);
+                LCD.WriteAt("Ties: ",100, 180);
+                LCD.WriteAt(ties, 100, 200);
 
                 // back button to return to main menu
                 LCD.SetFontColor(WHITE);
@@ -7227,11 +8600,22 @@ int main()
         while (!gameStarted){
         mainMenu();
     }
+
          if (QuestionsLeft !=0){
             DrawQuestionBoard();
         }
-        LCD.Update();
+       
+        if(QuestionsLeft == 0){
+            // resets questions left for next game
+            QuestionsLeft = 30;
+        }
     }
 }
+
+
+
+
+
+
 
 
